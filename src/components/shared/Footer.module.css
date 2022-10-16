@@ -1,0 +1,45 @@
+.container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background-color: #006effb8;
+    width: 100%;
+    border-radius: 50px;
+    box-shadow: 0px 5px 24px rgba(149, 157, 165, 0.4);
+    padding: 5px;
+    margin-bottom: 5px;
+    /* position: absolute; */
+  /* bottom: 0; */
+  
+  }
+
+.copyright {
+  margin-left: 15px;
+}  
+.copyright span {
+  color: orange;
+  font-style: italic;
+  font-weight: bold;
+}
+
+.linkContainer {
+
+}
+
+.linkContainer a {
+  text-decoration: none;
+  padding-left: 5px;
+}
+.linkContainer a:not(:last-child)::after {
+  content: " |";
+}
+.footerLink {
+display: flex;
+margin-right: 25px;
+}
+
+.linkIcon {
+  font-size: 1.5rem;
+
+}
+

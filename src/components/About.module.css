@@ -1,0 +1,19 @@
+.container {
+    display: flex;
+    justify-content: space-around;
+    height: 83vh;
+    margin-top: 5rem;
+}
+
+.textContainer {
+    margin: 2rem;
+    width: 30%;
+}
+
+.imageContainer {
+    width: 30rem;
+    height: 20rem;
+    border-radius: 5rem;
+    margin: 2rem;
+
+}

@@ -17,15 +17,15 @@ const Navbar = () => {
     return (
         <div className={styles.mainContainer}>
             <div className={styles.container}>
-            <div className={styles.productLink}>
-                <Link  to="#">Home</Link>
-                <Link  to="/products">Products</Link>
-                <Link  to="#">About Us</Link>
-                <Link  to="#">Sign Up</Link>
+              <div className={styles.productLink}>
+                  <Link  to="#">Home</Link>
+                  <Link  to="/products">Products</Link>
+                  <Link  to="/aboutus">About Us</Link>
+                  <Link  to="#">Sign Up</Link>
 
-            </div>
+              </div>
                 <div className={styles.iconContainer}>
-                    <Link to="/cart"><img src={shopIcon} /></Link>
+                    <Link to="/cart"><img src={shopIcon} alt="shoppingcart"/></Link>
                     <span>{state.itemsCounter}</span>
                 </div>
             </div>
