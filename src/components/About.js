@@ -7,6 +7,7 @@ import abuotImg from '../assets/images/aboutUsImage.jpeg';
 import styles from "./About.module.css";
 
 
+
 function About() {
   return (
     <div className={styles.container}>
