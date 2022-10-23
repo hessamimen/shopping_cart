@@ -21,7 +21,7 @@ const Navbar = () => {
                   <Link  to="#">Home</Link>
                   <Link  to="/products">Products</Link>
                   <Link  to="/aboutus">About Us</Link>
-                  <Link  to="#">Sign Up</Link>
+                  <Link  to="/signup">Sign Up</Link>
 
               </div>
                 <div className={styles.iconContainer}>
