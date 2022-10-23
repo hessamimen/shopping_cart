@@ -13,6 +13,7 @@ import SignUp from './components/SignUp';
 import ProductContextProvider from './context/ProductContextProvider';
 import CartContextProvider from './context/CartContextProvider';
 import NavBarTop from './components/shared/NavBarTop';
+import Home from './components/Home';
 
 
 function App() {
@@ -22,7 +23,8 @@ function App() {
     <NavBarTop/>
     <Navbar />
       <Routes>
-      <Route path="/aboutus" element={<About/>} />
+        <Route path="/aboutus" element={<About/>} />
+        <Route path="/" element={<Home/>} />
         <Route path="/products/:id" element={<ProductDetails/>} />
         <Route path="/products" element={<Store/>} />
         <Route path="/cart" element={<ShopCart/> }/>
