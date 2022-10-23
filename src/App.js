@@ -12,12 +12,14 @@ import SignUp from './components/SignUp';
 //Context:
 import ProductContextProvider from './context/ProductContextProvider';
 import CartContextProvider from './context/CartContextProvider';
+import NavBarTop from './components/shared/NavBarTop';
 
 
 function App() {
   return (
    <ProductContextProvider>
     <CartContextProvider>
+    <NavBarTop/>
     <Navbar />
       <Routes>
       <Route path="/aboutus" element={<About/>} />
