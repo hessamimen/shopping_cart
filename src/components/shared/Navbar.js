@@ -23,7 +23,7 @@ const Navbar = () => {
 
 
     return (
-        <div className='w-screen fixed h-20 z-10 bg-zinc-300/60 drop-shadow-2xl'>
+        <div className='w-screen fixed h-20 z-10 bg-zinc-300/80 drop-shadow-2xl'>
             <div className='px-2 flex justify-between items-center w-full h-full'>
                 <div >
                     <div className='hidden sm:flex items-center'>
@@ -44,8 +44,8 @@ const Navbar = () => {
                     </ul>
                 </div>
                 <div className='relative mr-8'>
-                    <Link to="/cart"><img className='w-12' src={shopIcon} alt="shoppingcart"/></Link>
-                    <span className='absolute top-0 right-0 bg-black rounded-xl w-5 h-5 text-sm text-center text-white'>{state.itemsCounter}</span>
+                    <Link to="/cart"><img className='w-10' src={shopIcon} alt="shoppingcart"/></Link>
+                    <span className='absolute -top-2 -right-2 bg-black rounded-xl w-5 h-5 text-sm text-center text-white'>{state.itemsCounter}</span>
                 </div>
             </div>
         </div>

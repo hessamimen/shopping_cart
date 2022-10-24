@@ -8,7 +8,7 @@ function NavBar1() {
         </div>
         <div className='hidden md:flex justify-end xl:mx-20 items-center'>
             <p className='mx-5'>Sustainability</p>
-            <p className='mx-5'>Find a store</p>
+            <a href="https://www.google.com/maps" target="_blank" rel="noreferrer"  className='mx-5 cursor-default'>Find a store</a>
             <p className='mx-5'>Customer Service</p>
         </div>
     </div>
