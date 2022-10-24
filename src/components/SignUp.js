@@ -1,7 +1,12 @@
 import React, {useState, useEffect} from 'react'
 
+//Toastify
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
+
 //Functions
 import {validate} from "../helpers/functions"
+import {notify} from '../helpers/toast'
 
 function SignUp() {
 
@@ -41,9 +46,12 @@ function SignUp() {
     const submitHandler = event => {
         event.preventDefault();
 
+
         if (!Object.keys(errors).length) {
-            console.log(data)
+            notify("Successfully Signed Up", "success")
         } else {
+            notify("Invalid Data!!!", "error");
+
             setTouched({
                 name: true,
                 email: true,
@@ -58,9 +66,9 @@ function SignUp() {
 
 
   return (
-    <div className='flex justify-center min-h-[30vh] my-48'>
+    <div className='flex justify-center min-h-min mt-32 mb-16'>
 
-        <form onSubmit={submitHandler} className='bg-black/10 hover:bg-black/20 h-fit p-8 rounded-xl'>
+        <form onSubmit={submitHandler} className='bg-black/10 hover:bg-black/20 h-fit p-8 rounded-xl shadow-2xl'>
             <h2 className='mb-5 py-1 border-b-2 border-b-black text-center text-2xl font-bold'>Sign Up</h2>
             
             <div className='flex flex-col w-full'>
@@ -99,6 +107,7 @@ function SignUp() {
             </div>
 
         </form>
+        <ToastContainer />
     </div>
   )
 }
