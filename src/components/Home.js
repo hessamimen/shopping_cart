@@ -7,7 +7,7 @@ import newWave from "../assets/images/new-wave.png"
 
 function Home() {
   return (
-    <div className='relative min-h-screen mt-20 bg-black/20 bg-blend-overlay'>
+    <div className='relative min-h-screen mt-20 bg-black/20 bg-blend-overlay '>
         <div className='absolute -z-10 top-[40%] sm:top-[50%] translate-y-[-50%]'>
             <video autoPlay loop muted 
             className="object-fill">

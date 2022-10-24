@@ -20,7 +20,7 @@ const quantityCount = (state, id) => {
         return state.selectedItems[index].quantity;
     }
 }
-
+//For Sign Up Form
 const validate = (data) => {
     const errors = {};
 
