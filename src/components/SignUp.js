@@ -66,32 +66,32 @@ function SignUp() {
 
 
   return (
-    <div className='flex justify-center min-h-min mt-32 mb-16'>
+    <div className='flex justify-center min-h-min mt-32 mb-28'>
 
         <form onSubmit={submitHandler} className='bg-black/10 hover:bg-black/20 h-fit p-8 rounded-xl shadow-2xl'>
             <h2 className='mb-5 py-1 border-b-2 border-b-black text-center text-2xl font-bold'>Sign Up</h2>
             
             <div className='flex flex-col w-full'>
                 <label>Name</label>
-                <input className='border rounded-lg mb-2 outline-lime-500 p-2' type="text" name="name" value={data.name} onChange={changeHandler} onFocus={focusHandler}/>
+                <input className={errors.name && touched.name ? 'outline-red-500 rounded-lg mb-2  p-2' : 'border rounded-lg mb-2 outline-lime-500 p-2'} type="text" name="name" value={data.name} onChange={changeHandler} onFocus={focusHandler}/>
                 {errors.name && touched.name && <span className='text-xs text-red-600 -mt-2 ml-2'>* {errors.name}</span> }
             </div>
             
             <div className='flex flex-col w-full'>
                 <label>Email</label>
-                <input className='border rounded-lg mb-2 outline-lime-500 p-2' type="text" name="email" value={data.email} onChange={changeHandler} onFocus={focusHandler}/>
+                <input className={errors.email && touched.email ? 'border rounded-lg mb-2 outline-red-500 p-2' : 'border rounded-lg mb-2 outline-lime-500 p-2' }type="text" name="email" value={data.email} onChange={changeHandler} onFocus={focusHandler}/>
                 {errors.email && touched.email && <span className='text-xs text-red-600 -mt-2 ml-2'>* {errors.email}</span> }
             </div>
             
             <div className='flex flex-col w-full'>
                 <label>Password</label>
-                <input className='border rounded-lg mb-2  outline-lime-500 p-2' type="password" name="password" value={data.password} onChange={changeHandler} onFocus={focusHandler}/>
+                <input className={errors.password && touched.password ? 'border rounded-lg mb-2  outline-red-500 p-2' : 'border rounded-lg mb-2  outline-lime-500 p-2' } type="password" name="password" value={data.password} onChange={changeHandler} onFocus={focusHandler}/>
                 {errors.password && touched.password && <span className='text-xs text-red-600 -mt-2 ml-2'>* {errors.password}</span> }
             </div>
             
             <div className='flex flex-col w-full'>
                 <label>Confirm Password</label>
-                <input className='border rounded-lg mb-2  outline-lime-500 p-2' type="password" name="confirmPassword" value={data.confirmPassword} onChange={changeHandler} onFocus={focusHandler}/>
+                <input className={errors.confirmPassword && touched.confirmPassword ? 'border rounded-lg mb-2  outline-red-500 p-2' : 'border rounded-lg mb-2  outline-lime-500 p-2' }type="password" name="confirmPassword" value={data.confirmPassword} onChange={changeHandler} onFocus={focusHandler}/>
                 {errors.confirmPassword && touched.confirmPassword && <span className='text-xs text-red-600 -mt-2 ml-2'>* {errors.confirmPassword}</span> }
             </div>
             

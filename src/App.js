@@ -9,11 +9,12 @@ import Navbar from './components/shared/Navbar';
 import ShopCart from './components/ShopCart';
 import About from './components/About'
 import SignUp from './components/SignUp';
+import Home from './components/Home';
+import NavBarTop from './components/shared/NavBarTop';
 //Context:
 import ProductContextProvider from './context/ProductContextProvider';
 import CartContextProvider from './context/CartContextProvider';
-import NavBarTop from './components/shared/NavBarTop';
-import Home from './components/Home';
+import Ani from './components/sample code/Ani';
 
 
 function App() {
