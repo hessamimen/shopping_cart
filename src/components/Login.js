@@ -8,7 +8,7 @@ import { LoginContext } from '../context/LoggedInContextProvider';
 function Login() {
 
     const loginContext = useContext(LoginContext);
-    const {handleLogin} = loginContext;
+    const {handleLogin, handleLoggout} = loginContext;
 
     const navigate = useNavigate()
 
@@ -47,12 +47,30 @@ function Login() {
     }
 
     
-
     const handleSuccessfullAuth = (data) => {
         handleLogin(data)
         navigate("/", {replace: true})
         // navigate(0)
     }
+
+    // ************ TEST LOGOUT ************
+const handleLogoutClick = () => {
+    axios.delete("http://localhost:3000/logout", {withCredentials: true})
+    handleLoggout();
+    navigate("/", {replace: true})
+}
+
+// const handleLogoutClick = () => {
+//     axios.delete("http://localhost:3000/logout", {withCredentials: true})
+//     .then(res => {
+//         handleLoggout();
+//         navigate("/", {replace: true})
+//     } )
+//     .catch(error => {
+//         console.log("logout error", error)
+//     })
+// }
+
   return (
 <div className='flex 
                     justify-center 
@@ -129,6 +147,8 @@ function Login() {
                                 border-gray-600
                                 cursor-default' 
                                 type='submit'>Login</button>
+                
+                <button onClick={()=> handleLogoutClick()}>LOG OUT</button>
             </div>
 
         </form>

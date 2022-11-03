@@ -24,7 +24,7 @@ const navigate = useNavigate()
 }
 
    const [signup, setSignup] = useState({
-
+                                            name: "",
                                             email: "",
                                             password: "",
                                             password_confirmation: "",
@@ -35,6 +35,7 @@ const navigate = useNavigate()
         event.preventDefault();
         axios.post("http://localhost:3000/registrations", {
             user: {
+                name: signup.name,
                 email: signup.email,
                 password: signup.password,
                 password_confirmation: signup.password_confirmation
@@ -64,15 +65,19 @@ const navigate = useNavigate()
   return (
     <div className='min-h-screen mt-52'>
         <form onSubmit={submitHandler}>
-        <label htmlFor="" className='block mx-2'>Email:</label>
+        <label className='block mx-2'>Name:</label>
+            <input type="text" name='name' placeholder='Please Enter Your Name' value={signup.name} onChange={changeHandler}
+            className = "border p-2 mx-3"
+              />
+        <label className='block mx-2'>Email:</label>
             <input type="email" name='email' placeholder=' Please Enter Your Email' value={signup.email} onChange={changeHandler}
             className = "border p-2 mx-3"
               />
-        <label htmlFor="" className='block mx-2'>Password:</label>
+        <label className='block mx-2'>Password:</label>
             <input type="password" name='password' placeholder=' Please Enter Your Password' value={signup.password} onChange={changeHandler}
             className = "border p-2 mx-3"
               />
-        <label htmlFor="" className='block mx-2'>Confirm Password:</label>
+        <label className='block mx-2'>Confirm Password:</label>
             <input type="password" name='password_confirmation' placeholder=' Please Enter Your Confirm Password' value={signup.password_confirmation} onChange={changeHandler}
             className = "border p-2 mx-3"
               />
