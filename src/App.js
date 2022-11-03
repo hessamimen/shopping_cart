@@ -11,15 +11,18 @@ import About from './components/About'
 import SignUp from './components/SignUp';
 import Home from './components/Home';
 import NavBarTop from './components/shared/NavBarTop';
+import Registration from "../src/components/sample code/Registration"
 //Context:
 import ProductContextProvider from './context/ProductContextProvider';
 import CartContextProvider from './context/CartContextProvider';
-import Ani from './components/sample code/Ani';
+import LoggedInContextProvider from './context/LoggedInContextProvider';
+import Login from './components/Login';
 
 
 function App() {
   return (
-   <ProductContextProvider>
+    <LoggedInContextProvider>
+    <ProductContextProvider>
     <CartContextProvider>
     <NavBarTop/>
     <Navbar />
@@ -30,11 +33,14 @@ function App() {
         <Route path="/products" element={<Store/>} />
         <Route path="/cart" element={<ShopCart/> }/>
         <Route path="/signup" element={<SignUp/> }/>
+        <Route path="/registration" element={<Registration/> }/>
+        <Route path="/login" element={<Login/>}/>
         <Route path="/*" element= {<Navigate to="/products" />} />
       </Routes>
       <Footer />
     </CartContextProvider>
-   </ProductContextProvider>
+    </ProductContextProvider>
+    </LoggedInContextProvider>
   );
 }
 

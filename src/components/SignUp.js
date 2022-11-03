@@ -45,8 +45,7 @@ function SignUp() {
 
     const submitHandler = event => {
         event.preventDefault();
-
-
+   
         if (!Object.keys(errors).length) {
             notify("Successfully Signed Up", "success")
         } else {
@@ -66,44 +65,129 @@ function SignUp() {
 
 
   return (
-    <div className='flex justify-center min-h-min mt-32 mb-28'>
 
-        <form onSubmit={submitHandler} className='bg-black/10 hover:bg-black/20 h-fit p-8 rounded-xl shadow-2xl'>
-            <h2 className='mb-5 py-1 border-b-2 border-b-black text-center text-2xl font-bold'>Sign Up</h2>
+    <div className='flex 
+                    justify-center 
+                    min-h-min 
+                    mt-32 
+                    mb-28'>
+
+        <form onSubmit={submitHandler} 
+            className='bg-black/10 
+                        h-fit 
+                        p-8 
+                        rounded-xl 
+                        shadow-2xl'>
+            <h2 className='mb-5 
+                            py-1 
+                            border-b-2 
+                            border-b-black 
+                            text-center 
+                            text-2xl 
+                            font-bold'>Sign Up</h2>
             
-            <div className='flex flex-col w-full'>
+            <div className='flex 
+                            flex-col 
+                            w-full'>
+                {/* //**************************************** NAME *****************************************  */}
                 <label>Name</label>
-                <input className={errors.name && touched.name ? 'outline-red-500 rounded-lg mb-2  p-2' : 'border rounded-lg mb-2 outline-lime-500 p-2'} type="text" name="name" value={data.name} onChange={changeHandler} onFocus={focusHandler}/>
+                <input className={errors.name && touched.name ? 'outline-red-500 rounded-lg mb-2  p-2' : 'border rounded-lg mb-2 outline-lime-500 p-2'} 
+                type="text" 
+                name="name" 
+                value={data.name} 
+                onChange={changeHandler} 
+                onFocus={focusHandler}/>
                 {errors.name && touched.name && <span className='text-xs text-red-600 -mt-2 ml-2'>* {errors.name}</span> }
             </div>
             
-            <div className='flex flex-col w-full'>
+            <div className='flex 
+                            flex-col 
+                            w-full'>
+                {/* //**************************************** EMAIL *****************************************  */}
+
                 <label>Email</label>
-                <input className={errors.email && touched.email ? 'border rounded-lg mb-2 outline-red-500 p-2' : 'border rounded-lg mb-2 outline-lime-500 p-2' }type="text" name="email" value={data.email} onChange={changeHandler} onFocus={focusHandler}/>
+                <input className={errors.email && touched.email ? 'border rounded-lg mb-2 outline-red-500 p-2' : 'border rounded-lg mb-2 outline-lime-500 p-2' }
+                type="text" 
+                name="email" 
+                value={data.email} 
+                onChange={changeHandler} 
+                onFocus={focusHandler}/>
                 {errors.email && touched.email && <span className='text-xs text-red-600 -mt-2 ml-2'>* {errors.email}</span> }
             </div>
             
-            <div className='flex flex-col w-full'>
+            <div className='flex 
+                            flex-col 
+                            w-full'>
+                {/* //**************************************** PASSWORD *****************************************  */}
+
                 <label>Password</label>
-                <input className={errors.password && touched.password ? 'border rounded-lg mb-2  outline-red-500 p-2' : 'border rounded-lg mb-2  outline-lime-500 p-2' } type="password" name="password" value={data.password} onChange={changeHandler} onFocus={focusHandler}/>
+                <input className={errors.password && touched.password ? 'border rounded-lg mb-2  outline-red-500 p-2' : 'border rounded-lg mb-2  outline-lime-500 p-2' } 
+                type="password" 
+                name="password" 
+                value={data.password} 
+                onChange={changeHandler} onFocus={focusHandler}/>
                 {errors.password && touched.password && <span className='text-xs text-red-600 -mt-2 ml-2'>* {errors.password}</span> }
             </div>
             
-            <div className='flex flex-col w-full'>
+            <div className='flex 
+                            flex-col 
+                            w-full'>
+                {/* //**************************************** CONFIRM PASSWORD *****************************************  */}
+
                 <label>Confirm Password</label>
-                <input className={errors.confirmPassword && touched.confirmPassword ? 'border rounded-lg mb-2  outline-red-500 p-2' : 'border rounded-lg mb-2  outline-lime-500 p-2' }type="password" name="confirmPassword" value={data.confirmPassword} onChange={changeHandler} onFocus={focusHandler}/>
+
+                <input className={errors.confirmPassword && touched.confirmPassword ? 'border rounded-lg mb-2  outline-red-500 p-2' : 'border rounded-lg mb-2  outline-lime-500 p-2' }
+                type="password" 
+                name="confirmPassword" 
+                value={data.confirmPassword} 
+                onChange={changeHandler} 
+                onFocus={focusHandler}/>
                 {errors.confirmPassword && touched.confirmPassword && <span className='text-xs text-red-600 -mt-2 ml-2'>* {errors.confirmPassword}</span> }
             </div>
             
             <div className=' w-full'>
+
+            {/* //**************************************** ACCEPT POLICY ***************************************** */}
+
                 <label>I accept Terms of Privacy Policy</label>
-                <input className='border rounded-lg mb-2  outline-lime-500 p-2 ml-2' type="checkbox" name="isAccepted" value={data.isAccepted} onChange={changeHandler} onFocus={focusHandler}/>
+                <input className='border 
+                                  rounded-lg 
+                                  mb-2  
+                                  outline-lime-500 
+                                  p-2 
+                                  ml-2' 
+                    type="checkbox" 
+                    name="isAccepted" 
+                    value={data.isAccepted} 
+                    onChange={changeHandler} onFocus={focusHandler}/>
                 {errors.isAccepted && touched.isAccepted && <p className='text-xs text-red-600 -mt-1 ml-2'>* {errors.isAccepted}</p> }
             </div>
-            
-            <div className='flex justify-around my-8 w-full'>
-                <a className='w-20  p-2 rounded-lg' href="#">Login</a>
-                <button className='w-20 bg-gray-500 p-2 rounded-lg text-white hover:bg-black/10 hover:border border-gray-600' type='submit'>Sign Up</button>
+
+            {/* **************************************** BUTTONs *****************************************  */}
+
+            <div className='flex 
+                            justify-around 
+                            my-8 
+                            w-full'>
+
+                <a className='w-20  
+                              p-2 
+                              rounded-lg
+                              cursor-default
+                              hover:border 
+                              border-gray-600' 
+                        
+                    href="/login">Login</a>
+                <button className='w-20 
+                                bg-gray-500 
+                                p-2 
+                                rounded-lg 
+                                text-white 
+                                hover:bg-black/10 
+                                hover:border 
+                                border-gray-600
+                                cursor-default' 
+                                type='submit'>Sign Up</button>
             </div>
 
         </form>

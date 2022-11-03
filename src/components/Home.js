@@ -1,13 +1,21 @@
 
-import React from 'react'
+import React, {useContext} from 'react'
 import { Link } from 'react-router-dom'
 
 import bgVid from "../assets/video/e00c0ff7-7e4e0fb8.mp4"
 import newWave from "../assets/images/new-wave.png"
 
+//Context
+import { LoginContext } from '../context/LoggedInContextProvider'
+
+
 function Home() {
+
+  const loginContext = useContext(LoginContext);
+
   return (
     <div className='relative min-h-[80vh] mt-20 bg-black/20 bg-blend-overlay '>
+    <h1>Status: {loginContext.loginData.loggedInStatus}</h1>
         <div className='absolute -z-10 top-[50%] sm:top-[40%] translate-y-[-60%]'>
             <video autoPlay loop muted 
             className="object-fill">
