@@ -147,8 +147,6 @@ const handleLogoutClick = () => {
                                 border-gray-600
                                 cursor-default' 
                                 type='submit'>Login</button>
-                
-                <button onClick={()=> handleLogoutClick()}>LOG OUT</button>
             </div>
 
         </form>

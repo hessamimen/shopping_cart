@@ -14,19 +14,22 @@ function Home() {
   const loginContext = useContext(LoginContext);
 
   return (
-    <div className='relative min-h-[80vh] mt-20 bg-black/20 bg-blend-overlay '>
-    <h1>Status: {loginContext.loginData.loggedInStatus}</h1>
-        <div className='absolute -z-10 top-[50%] sm:top-[40%] translate-y-[-60%]'>
-            <video autoPlay loop muted 
-            className="object-fill">
+    <div className='relative min-h-[80vh] md:min-h-screen bg-black/20 bg-blend-overlay '>
+        <div className='relative -z-10 sm:top-[80%]'>
+        {/* <div className='absolute -z-10 top-[50%] sm:top-[40%] translate-y-[-60%]'> */}
+            <video autoPlay 
+                  loop 
+                  muted 
+                  className="object-fill absolute top-1/2 translate-y-[50%] sm:translate-y-0">
             <source src={bgVid} type="video/mp4" />
             </video>
         </div>
-        <div>
-            <img className='py-20 m-auto w-1/2 md:absolute md:top-[50%] md:translate-y-[-100%] md:left-[50%] md:translate-x-[-50%] md:w-1/3 md:p-10' src={newWave} alt="newWave" />
+        <div className='relative top-10 sm:top-28'>
+            <img className=' w-1/2 mx-auto' src={newWave} alt="newWave" />
         </div>
-        <div className='absolute h-20 bottom-[10%] sm:bottom-[20%] sm:translate-y-[-50%] left-[55%] translate-x-[-50%] w-80 '>
-            <Link to="/products" className='border italic rounded-xl px-8 py-4 text-white hover:bg-black/60 hover:border-none hover:cursor-default'> Shop New The best Products</Link>
+        <div className='absolute h-20 bottom-10 left-1/2 -translate-x-1/2 md:scale-150'>
+        {/* <div className='absolute h-20 bottom-[10%] sm:bottom-[20%] sm:translate-y-[-50%] left-[55%] translate-x-[-50%] w-80 '> */}
+            <Link to="/products" className='border box-border italic rounded-xl px-8 py-4 text-white hover:bg-black/60 hover:border-none hover:cursor-default'> Shop New Products</Link>
         </div>
     </div>
   )

@@ -1,8 +1,9 @@
-import React, { useContext, useState } from 'react';
+import React, { useContext, useState, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 
 // Context
 import { CartContext } from '../../context/CartContextProvider';
+import { LoginContext } from '../../context/LoggedInContextProvider';
 
 // Icons
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/solid';
@@ -12,6 +13,23 @@ import shopIcon from "../../assets/icons/shop.svg";
 // import styles from "./Navbar.module.css";
 
 const Navbar = () => {
+
+    // TEST CONTEXT
+    const loginContext = useContext(LoginContext);
+    const {loginData, handleLogin} = loginContext;
+
+//     const [navState, setNavstate] = useState({})
+
+//     const navData = () => {
+//         setNavstate(loginData)}
+
+
+
+// useEffect(() => {
+//     navData()
+// })
+
+    // TEST CONTEXT
 
     const {state} = useContext(CartContext);
 
@@ -23,14 +41,14 @@ const Navbar = () => {
 
 
     return (
-        <div className='w-screen fixed h-20 z-10 bg-zinc-300/80 drop-shadow-2xl'>
+        <div className='w-screen relative h-20 z-10 bg-zinc-300/80 drop-shadow-2xl'>
             <div className='px-2 flex justify-between items-center w-full h-full'>
                 <div >
                     <div className='hidden sm:flex items-center'>
                         <Link to="/" className='cursor-default hover:bg-gray-200 rounded-xl p-2 m-2'>Home</Link>
                         <Link to="/products" className='cursor-default hover:bg-gray-200 rounded-xl p-2 m-2'>Products</Link>
                         <Link to="/aboutus" className='cursor-default hover:bg-gray-200 rounded-xl p-2 m-2'>About Us</Link>
-                        <Link to="/signup" className='cursor-default hover:bg-gray-200 rounded-xl p-2 m-2'>Sign Up</Link>
+                        <Link to="/signup" className='cursor-default hover:bg-gray-200 rounded-xl p-2 m-2'> {loginData.loggedInStatus === "LOGGED_IN" ? `${loginData.user.name}` : 'Sign Up'} </Link>
                     </div>
                     <div className='sm:hidden mr-4' onClick={handleClick}>
                         {!nav ? <Bars3Icon className='w-7'/> : <XMarkIcon className='w-7'/>}
